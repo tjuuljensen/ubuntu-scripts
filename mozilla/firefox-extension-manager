@@ -147,7 +147,7 @@ TMP_XPI="${TMP_DIR}/addon.xpi"
 # ------------------------------------
 
 # set home directory for normal or snap install
-[ ! -d "$HOME/snap/firefox" ] && USER_HOME="$HOME/snap/firefox/common/.mozilla/firefox" || USER_HOME="$HOME/.mozilla/firefox"
+[ -d "$HOME/snap/firefox" ] && USER_HOME="$HOME/snap/firefox/common/.mozilla/firefox" || USER_HOME="$HOME/.mozilla/firefox"
 
 # if user home environment absent, launch firefox for the first time to create it (if allowed)
 if [ ! -d "${USER_HOME}" -a "${ALLOW}" = "create" ]
